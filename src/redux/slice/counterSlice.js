@@ -15,10 +15,20 @@ export const counterSlice = createSlice({
          decrement:(state)=>{
                    state.count-=1
         },
+         incrementMultiplier:(state,action)=>{
+                   state.count+=Number(action.payload)
+        },
+         decrementMultiplier:(state,action)=>{
+                   state.count-=Number(action.payload)
+        },
+
+        resetCounter:(state)=>{
+            state.count=10
+        }
     }
 })
 
-export const {increment,decrement} = counterSlice.actions
+export const {increment,decrement,incrementMultiplier,decrementMultiplier,resetCounter}= counterSlice.actions
 export const counterReducer = counterSlice.reducer
 
 // if we observe here we ar ehaving reducers whereas in
